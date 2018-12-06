@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Declaramos bean "persona" e inyectamos el bean direccion -->
+    <bean id="persona" class="com.udemy.springlocal.desafio.Persona">
+        <property name="direccion" ref="direccion" />
+    </bean>
+
+    <!-- Bean direccion -->
+    <bean id="direccion" class="com.udemy.springlocal.desafio.Direccion" />
+</beans>
