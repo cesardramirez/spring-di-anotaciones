@@ -1,11 +1,17 @@
 package com.udemy.springlocal.desafio;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component("persona")
 public class Persona {
 
     private String nombre = "Andres Guzman";
     private int edad = 34;
     private float peso = 1.99f;
     private boolean programador = true;
+    
+    @Autowired
     private Direccion direccion;  // Objeto Dirección.
 
     public String getNombre() {
