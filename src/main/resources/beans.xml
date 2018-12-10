@@ -10,7 +10,29 @@
         
     <!-- habilitamos el uso de anotaciones -->
     <context:component-scan base-package="com.udemy.springlocal.desafio" />
+    
+    <!-- Bean Lista de Direcciones -->
+    <bean id="listaDirecciones" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="direccionChile" />
+                <ref bean="direccionUsa" />
+            </list>
+        </constructor-arg>
+    </bean>
 
-    <!-- Bean direccion -->
-    <bean id="direccion" class="com.udemy.springlocal.desafio.Direccion" />
+    <!-- bean direccion -->
+    <bean id="direccionChile" class="com.udemy.springlocal.desafio.Direccion">
+        <property name="calle" value="Av. Apoquindo" />
+        <property name="ciudad" value="Santiago" />
+        <property name="numero" value="111" />
+        <property name="pais" value="Chile" />
+    </bean>
+
+    <bean id="direccionUsa" class="com.udemy.springlocal.desafio.Direccion">
+        <property name="calle" value="7770 NW 12th St, Ste" />
+        <property name="ciudad" value="Miami, FL" />
+        <property name="numero" value="123" />
+        <property name="pais" value="Estados Unidos" />
+    </bean>
 </beans>

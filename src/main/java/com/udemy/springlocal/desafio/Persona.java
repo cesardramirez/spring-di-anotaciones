@@ -12,7 +12,7 @@ public class Persona {
     private boolean programador = true;
     
     @Autowired
-    private Direccion direccion;  // Objeto Dirección.
+    private IDirecciones direcciones;
 
     public String getNombre() {
         return nombre;
@@ -42,12 +42,21 @@ public class Persona {
     public void setProgramador(boolean esProgramador) {
         this.programador = esProgramador;
     }
-
-    // Get y Set del objeto Dirección.
-    public Direccion getDireccion() {
-        return direccion;
-    }
-    public void setDireccion(Direccion direccion) {
-        this.direccion = direccion;
+    
+    public String getDirecciones() {
+        StringBuilder sb = new StringBuilder("Mis Direcciones:\n");
+        
+        for (Direccion d : direcciones.getDirecciones()) {
+            sb.append(d.getCalle())
+            .append(" ")
+            .append(d.getNumero())
+            .append(" ")
+            .append(d.getCiudad())
+            .append(" ")
+            .append(d.getPais())
+            .append("\n");
+        }
+        
+        return sb.toString();
     }
 }

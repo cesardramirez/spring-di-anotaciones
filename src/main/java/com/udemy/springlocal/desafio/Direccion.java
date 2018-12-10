@@ -2,10 +2,10 @@ package com.udemy.springlocal.desafio;
 
 public class Direccion {
 
-    private int numero = 111;
-    private String calle = "Av. Apoquindo";
-    private String ciudad = "Santiago";
-    private String pais = "Chile";
+    private int numero;
+    private String calle;
+    private String ciudad;
+    private String pais;
 
     public int getNumero() {
         return numero;
